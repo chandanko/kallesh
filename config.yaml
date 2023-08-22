@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: my-pod-deployment
+spec:
+   replicas: 1  #can adjust the number of replicas as we needed
+   selector:
+     matchLabels:
+       app: my-pod
+   template:
+     metadata:
+       labels:
+         app: my-pod
+     spec:
+       containers:
+         - name: python-container
+           image: chandanko/repo:latest
